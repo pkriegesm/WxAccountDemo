@@ -1,0 +1,269 @@
+openapi: 3.0.1
+info:
+  title: AccountData-API
+  description: |
+    This API consolidates data between SaaS CRM and on-prem customer database. According to local data regulataion, bank details can be added or queried
+  version: "2.5"
+servers:
+- url: https://apidemo.softwareag.com
+paths:
+  /accounts:
+    summary: /accounts
+    get:
+      summary: Get all Customer Accounts
+      operationId: getAccounts
+      parameters: []
+      responses:
+        "200":
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Accounts'
+              example:
+                Accounts:
+                - Account:
+                    id: nterraMOCK
+                    name: nterra integration GmbH
+                    type: Organization
+                    homepage: http://www.nterra.de/
+                    rating: Hot
+                    industry: IT Services
+                - Account:
+                    id: sagMOCK
+                    name: Software AG
+                    type: Organization
+                    homepage: http://www.softwareag.com
+                    rating: Hot
+                    industry: Information Technology
+                - Account:
+                    id: scheerMOCK
+                    name: Scheer GmbH
+                    type: Organization
+                    homepage: https://www.scheer-group.com
+                    rating: Warm
+                    industry: Information Technology
+        "401":
+          description: Access Denied
+          content: {}
+    post:
+      summary: Create new Customer Account
+      operationId: addAccounts
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Accounts'
+            example:
+              Accounts:
+              - Account:
+                  name: Software AG
+                  type: Organization
+                  homepage: http://www.softwareag.com
+                  rating: Hot
+                  industry: Information Technology
+      responses:
+        "200":
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Accounts'
+              example:
+                Accounts:
+                - Account:
+                    id: sagMOCK
+        "401":
+          description: Access Denied
+          content: {}
+  /accounts/{accountID}:
+    summary: "/accounts/{accountID}"
+    get:
+      summary: Get Customer Account by ID
+      operationId: getAccountByID
+      parameters:
+      - name: accountID
+        in: path
+        description: ID of Account to return
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+              example: |-
+                {
+                    "Account": {
+                        "id": "sagMOCK",
+                        "name": "Software AG",
+                        "type": "Organization",
+                        "homepage": "http://www.softwareag.com",
+                        "rating": "Hot",
+                        "industry" : "Information Technology"
+                    }
+                }
+        "401":
+          description: Access Denied
+          content: {}
+        "404":
+          description: Account ID not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: Delete Customer Account for given ID
+      description: Delete a specific customer account and associated bank details.
+      parameters:
+      - name: accountID
+        in: path
+        description: The ID of the customer account to be deleted.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "204":
+          description: Account deleted successfully
+        "404":
+          description: Account ID not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "401":
+          description: Access Denied
+          content: {}
+  /accounts/{accountID}/bankdetails:
+    summary: "/accounts/{accountID}/bankdetails"
+    get:
+      summary: Get Bank details for given Customer Account ID
+      description: Retrieve the BankName and IBAN for a specific customer account.
+      parameters:
+      - name: accountID
+        in: path
+        description: The ID of the customer account.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  BankName:
+                    type: string
+                    description: The name of the bank.
+                    example: Example Bank
+                  IBAN:
+                    type: string
+                    description: The International Bank Account Number.
+                    example: GB29NWBK60161331926819
+        "401":
+          description: Access Denied
+          content: {}
+        "404":
+          description: Account ID not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      summary: Update Bank Account Information
+      description: Update the BankName and IBAN for a specific customer account.
+      parameters:
+      - name: accountID
+        in: path
+        description: The ID of the customer account.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                BankName:
+                  type: string
+                  description: The name of the bank.
+                  example: Example Bank
+                IBAN:
+                  type: string
+                  description: The International Bank Account Number.
+                  example: GB29NWBK60161331926819
+        required: true
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Invalid request body
+        "404":
+          description: Account ID not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Accounts:
+      type: object
+      properties:
+        Accounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
+    Account:
+      type: object
+      properties:
+        Account:
+          $ref: '#/components/schemas/AccountData'
+    AccountData:
+      required:
+      - homepage
+      - name
+      - type
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        homepage:
+          type: string
+        rating:
+          type: string
+        industry:
+          type: string
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: integer
+  responses: {}
+  parameters: {}
+  examples: {}
+  requestBodies: {}
+  headers: {}
+  securitySchemes: {}
+  links: {}
+  callbacks: {}
