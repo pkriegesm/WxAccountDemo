@@ -1,5 +1,6 @@
 # WxAccountDemo
-Integration Server Package in the context of Super iPaaS Demo.
+
+Integration Server Package in the context of IBM webMethods Hybrid iPaaS Demo.
 
 ## webMethods Cloud Configuration
 
@@ -35,18 +36,12 @@ This package can create/update a "webMethods Cloud Application", including the n
 
 These properties can be defined using a configuration variables template like:
 
-```
+```txt
     globalvariable.WxAccountDemo.wx..account..demo..cloud..account..aliasName.value = <YOUR_ALIAS>
-
     globalvariable.WxAccountDemo.wx..account..demo..cloud..account..pwd.isSecure = true
-
     globalvariable.WxAccountDemo.wx..account..demo..cloud..account..pwd.value = <YOUR_PASSWORD>
-
     globalvariable.WxAccountDemo.wx..account..demo..cloud..account..tenantURL.value = https://your-tenant.webmethods.io
-
     globalvariable.WxAccountDemo.wx..account..demo..cloud..account..user.value = <YOUR_USER>
-
     globalvariable.WxAccountDemo.wx..account..demo..cloud..app..services.value = wx.accountdemo.pub.services\:createCustomerAccounts,wx.accountdemo.pub.services\:deleteAccountByID,wx.accountdemo.pub.services\:getAllCustomerAccounts,wx.accountdemo.pub.services\:getCustomerAccountByID
-
     globalvariable.WxAccountDemo.wx..account..demo..cloud..connection..aliasName.value = <YOUR_HYBRID_USER>
 ```
