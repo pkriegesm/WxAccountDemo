@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">interface</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">wx.accountdemo.util</value>
+  <value name="node_pkg">WxAccountDemo</value>
+  <value name="is_public">false</value>
+  <value name="encodeutf8">true</value>
+  <value name="shared">CnByaXZhdGUgc3RhdGljIGZpbmFsIFN0cmluZyBQQUNLQUdFX05BTUUgPSAiV3hBY2NvdW50RGVt
+byI7CnByaXZhdGUgc3RhdGljIGZpbmFsIFN0cmluZyBDT05GSUdfRklMRV9OQU1FID0gImNsb3Vk
+X2NvbmZpZy5qc29uIjsKcHJpdmF0ZSBzdGF0aWMgZmluYWwgU3RyaW5nIENPTkZJR1VSQVRJT05f
+RE9DVFlQRSA9ICJ3eC5hY2NvdW50ZGVtby5hZG1pbjpwYWNrYWdlQ29uZmlndXJhdGlvbiI7CnBy
+aXZhdGUgc3RhdGljIGZpbmFsIHZvaWQgc2ltcGxlTG9nKFN0cmluZyBtc2csIFN0cmluZyBwcmVm
+aXgsIFN0cmluZyBsZXZlbCkgewoJdHJ5IHsKCQlJRGF0YSBpbnB1dCA9IElEYXRhRmFjdG9yeS5j
+cmVhdGUoKTsKCQlJRGF0YUN1cnNvciBpbnB1dEN1cnNvciA9IGlucHV0LmdldEN1cnNvcigpOwoJ
+CUlEYXRhVXRpbC5wdXQoaW5wdXRDdXJzb3IsICJtZXNzYWdlIiwgbXNnKTsKCQkKLy8JCQlJRGF0
+YVV0aWwucHV0KGlucHV0Q3Vyc29yLCAiZnVuY3Rpb24iLCAocHJlZml4ICE9IG51bGwgJiYgISIi
+LmVxdWFscyhwcmVmaXgpKSA/IHByZWZpeCArICIgIiArIGZ1bmN0aW9uIDogZnVuY3Rpb24pOwoJ
+CUlEYXRhVXRpbC5wdXQoaW5wdXRDdXJzb3IsICJsZXZlbCIsIGxldmVsKTsKCQlpbnB1dEN1cnNv
+ci5kZXN0cm95KCk7CgkJCgkJCgkJU2VydmljZS5kb0ludm9rZSggInB1Yi5mbG93IiwgImRlYnVn
+TG9nIiwgaW5wdXQgKTsKCX0gY2F0Y2ggKEV4Y2VwdGlvbiBlKXsKCS8vIGp1c3QgbG9nIHRoZSBl
+cnJvciBpbnRvIHRoZSBzZXJ2ZXIncyBlcnJvciBsb2cgLi4uIAoJCWUucHJpbnRTdGFja1RyYWNl
+KCk7CgkJU2VydmVyLmxvZ0Vycm9yKGUpOwoJfQp9</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+  <array name="imports" type="value" depth="1">
+    <value>java.io.File</value>
+    <value>java.io.IOException</value>
+    <value>java.nio.file.FileSystems</value>
+    <value>java.nio.file.Files</value>
+    <value>java.nio.file.Path</value>
+    <value>java.nio.file.Paths</value>
+    <value>com.wm.app.b2b.server.Server</value>
+    <value>com.wm.app.b2b.server.ServerAPI</value>
+  </array>
+</Values>

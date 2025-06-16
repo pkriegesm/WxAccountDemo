@@ -1,0 +1,32 @@
+{
+    "wx.account.demo.cloud.account.user": "apiuser",
+    "wx.account.demo.cloud.account.pwd": null,
+    "wx.account.demo.cloud.account.tenantURL": "https://demolab.int-az-eu.webmethods.io",
+    "wx.account.demo.cloud.account.aliasName": "demolab_tst",
+    "wx.account.demo.cloud.connection.aliasName": "hybrid_user",
+    "wx.account.demo.cloud.app.reload": true,
+    "wx.account.demo.cloud.app.name": "EntireXMainframeIntegration",
+    "wx.account.demo.cloud.app.description": "Services providing data retrieved from a mainframe app using IBM webMethods EntireX",
+    "wx.account.demo.cloud.app.services": [
+        "wx.accountdemo.pub.services:createCustomerAccounts",
+        "wx.accountdemo.pub.services:deleteAccountByID",
+        "wx.accountdemo.pub.services:getAllCustomerAccounts",
+        "wx.accountdemo.pub.services:getCustomerAccountByID"
+    ],
+    "wsendpoint" : {
+        "consumer" : [
+            {
+                "update": "true",
+                "alias":"demolab_iPaaS",
+                "transportInfo" : {
+                    "type":"https",
+                    "host":"demolab.int-az-eu.webmethods.io",
+                    "port":"443",
+                    "user":"apiuser",
+                    "pwdGlobalProp":"wx.account.demo.cloud.account.pwd"
+
+                }
+            }
+        ]
+    }
+}

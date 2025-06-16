@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.data.ISMemDataImpl">
+    <array name="globalVariables" type="record" depth="1">
+      <record javaclass="com.wm.data.ISMemDataImpl">
+        <value name="key">wx.account.demo.cloud.app.services</value>
+        <value name="value">wx.accountdemo.pub.services:createCustomerAccounts,wx.accountdemo.pub.services:deleteAccountByID,wx.accountdemo.pub.services:getAllCustomerAccounts,wx.accountdemo.pub.services:getCustomerAccountByID</value>
+        <value name="isSecure">false</value>
+      </record>
+      <record javaclass="com.wm.data.ISMemDataImpl">
+        <value name="key">wx.account.demo.cloud.account.aliasName</value>
+        <value name="value">demolab</value>
+        <value name="isSecure">false</value>
+      </record>
+      <record javaclass="com.wm.data.ISMemDataImpl">
+        <value name="key">wx.account.demo.cloud.account.pwd</value>
+        <value name="value">gvhandle.wx.account.demo.cloud.account.pwd</value>
+        <value name="isSecure">true</value>
+      </record>
+      <record javaclass="com.wm.data.ISMemDataImpl">
+        <value name="key">wx.account.demo.cloud.connection.aliasName</value>
+        <value name="value">hybrid_user</value>
+        <value name="isSecure">false</value>
+      </record>
+      <record javaclass="com.wm.data.ISMemDataImpl">
+        <value name="key">wx.account.demo.cloud.account.tenantURL</value>
+        <value name="value">https://demolab.int-az-eu.webmethods.io</value>
+        <value name="isSecure">false</value>
+      </record>
+      <record javaclass="com.wm.data.ISMemDataImpl">
+        <value name="key">wx.account.demo.cloud.account.user</value>
+        <value name="value">apiuser</value>
+        <value name="isSecure">false</value>
+      </record>
+      <record javaclass="com.wm.data.ISMemDataImpl">
+        <value name="key">wx.account.demo.cloud.app.reload</value>
+        <value name="value">false</value>
+        <value name="isSecure">false</value>
+      </record>
+    </array>
+  </record>
+</IDataXMLCoder>
